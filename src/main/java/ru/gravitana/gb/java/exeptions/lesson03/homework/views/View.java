@@ -6,4 +6,5 @@ public interface View {
     void showInput(String message);
     void showPrompt(String message);
     void showMessage(String message);
+    void showError(String message);
 }

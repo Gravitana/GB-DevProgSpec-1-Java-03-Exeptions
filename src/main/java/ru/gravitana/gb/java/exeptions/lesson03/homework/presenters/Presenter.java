@@ -1,5 +1,6 @@
 package ru.gravitana.gb.java.exeptions.lesson03.homework.presenters;
 
+import ru.gravitana.gb.java.exeptions.lesson03.homework.exceptions.InputDataException;
 import ru.gravitana.gb.java.exeptions.lesson03.homework.services.DataProcessing;
 import ru.gravitana.gb.java.exeptions.lesson03.homework.views.View;
 
@@ -22,15 +23,20 @@ public class Presenter {
             int errorCode = data.checkSize();
 
             if (errorCode == -1) {
-                view.showMessage("Введены не все данные");
+                view.showError("Введены не все данные");
                 continue;
             }
             if (errorCode == 1) {
-                view.showMessage("Введены лишние данные");
+                view.showError("Введены лишние данные");
                 continue;
             }
             view.showPrompt("Данные приняты. Идёт обработка...");
-            view.showPrompt(data.parseData().toString());
+            try {
+                view.showPrompt(data.parseData().toString());
+            } catch (InputDataException e) {
+                view.showError(e.getMessage());
+            }
+
         }
     }
 

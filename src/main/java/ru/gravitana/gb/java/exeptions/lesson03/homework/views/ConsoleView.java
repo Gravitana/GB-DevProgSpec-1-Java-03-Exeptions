@@ -18,7 +18,7 @@ public class ConsoleView implements View{
         System.out.println("║  следующие данные, разделённые пробелом:      ║");
         System.out.println("║  - Фамилия Имя Отчество                       ║");
         System.out.println("║  - Дата рождения (в формате dd.mm.yyyy)       ║");
-        System.out.println("║  - Номер телефона (целое беззнаковое число)   ║");
+        System.out.println("║  - Номер телефона (целое число 11 цифр)       ║");
         System.out.println("║  - Пол (символ латиницей f или m)             ║");
         System.out.println("╚═══════════════════════════════════════════════╝");
     }
@@ -39,5 +39,12 @@ public class ConsoleView implements View{
         System.out.println("╔═══════════════════════════════════════╗");
         System.out.printf( "║ %-37s ║\n", message);
         System.out.println("╚═══════════════════════════════════════╝");
+    }
+
+    @Override
+    public void showError(String message) {
+        System.out.println("╔════════╤══════════════════════════════════════╗");
+        System.out.printf( "║ ОШИБКА │ %-36s ║\n", message);
+        System.out.println("╚════════╧══════════════════════════════════════╝");
     }
 }
