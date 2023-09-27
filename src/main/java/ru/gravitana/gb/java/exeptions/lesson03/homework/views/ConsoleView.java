@@ -1,4 +1,4 @@
-package ru.gravitana.gb.java.exeptions.lesson03.homework.view;
+package ru.gravitana.gb.java.exeptions.lesson03.homework.views;
 
 public class ConsoleView implements View{
 

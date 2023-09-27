@@ -1,7 +1,7 @@
-package ru.gravitana.gb.java.exeptions.lesson03.homework.presenter;
+package ru.gravitana.gb.java.exeptions.lesson03.homework.presenters;
 
-import ru.gravitana.gb.java.exeptions.lesson03.homework.service.DataProcessing;
-import ru.gravitana.gb.java.exeptions.lesson03.homework.view.View;
+import ru.gravitana.gb.java.exeptions.lesson03.homework.services.DataProcessing;
+import ru.gravitana.gb.java.exeptions.lesson03.homework.views.View;
 
 import java.util.Scanner;
 
@@ -30,7 +30,7 @@ public class Presenter {
                 continue;
             }
             view.showPrompt("Данные приняты. Идёт обработка...");
-            view.showPrompt(data.parseData());
+            view.showPrompt(data.parseData().toString());
         }
     }
 
