@@ -1,5 +1,7 @@
 package ru.gravitana.gb.java.exeptions.lesson03.homework.views;
 
+import java.util.Arrays;
+
 public class ConsoleView implements View{
 
     @Override
@@ -42,9 +44,16 @@ public class ConsoleView implements View{
     }
 
     @Override
-    public void showError(String message) {
+    public void showError(Exception e) {
         System.out.println("╔════════╤══════════════════════════════════════╗");
-        System.out.printf( "║ ОШИБКА │ %-36s ║\n", message);
+        System.out.printf( "║ ОШИБКА │ %-36s ║\n", e.getMessage());
         System.out.println("╚════════╧══════════════════════════════════════╝");
+    }
+
+    @Override
+    public void showStackTrace(Exception e) {
+        for (StackTraceElement ste : e.getStackTrace()) {
+            System.out.println("║ " + ste);
+        }
     }
 }

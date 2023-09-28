@@ -3,7 +3,7 @@ package ru.gravitana.gb.java.exeptions.lesson03.homework.services;
 import ru.gravitana.gb.java.exeptions.lesson03.homework.data.Item;
 import ru.gravitana.gb.java.exeptions.lesson03.homework.exceptions.InputDataException;
 
-public class DataProcessing {
+public class DataProcessing { // TODO вынести все проверки
     private final int REQUIRED_ELEMENTS = 6;
 
     private final String[] data;
@@ -25,15 +25,15 @@ public class DataProcessing {
                 continue;
             }
             if (s.contains(".")) {
-                item.setBirthday(s); // TODO проверить формат даты
+                if (CheckDate.check(s)) {
+                    item.setBirthday(s);
+                }
                 continue;
             }
             if (s.matches(".*[0-9].*")) {
-                s = s.replace("+", "").replace("-", "");
-                if (s.length() != 11) {
-                    throw new InputDataException("Неправильный формат телефона");
+                if (CheckPhoneNumber.check(s)) {
+                    item.setPhone(s);
                 }
-                item.setPhone(s);
                 continue;
             }
             if (fioIndex > 2) {
