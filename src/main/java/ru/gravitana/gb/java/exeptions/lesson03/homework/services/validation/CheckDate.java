@@ -1,4 +1,4 @@
-package ru.gravitana.gb.java.exeptions.lesson03.homework.services;
+package ru.gravitana.gb.java.exeptions.lesson03.homework.services.validation;
 
 import ru.gravitana.gb.java.exeptions.lesson03.homework.exceptions.InputDataException;
 

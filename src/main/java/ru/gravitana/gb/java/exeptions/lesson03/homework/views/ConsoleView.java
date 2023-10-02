@@ -8,8 +8,9 @@ public class ConsoleView implements View{
     public void showWelcome() {
         System.out.println("╔═══════════════════════════════════════════════╗");
         System.out.println("║                                               ║");
-        System.out.println("║               ЗАПИСНАЯ  КНИЖКА                ║");
+        System.out.println("║         З А П И С Н А Я   К Н И Ж К А         ║");
         System.out.println("║                                               ║");
+        System.out.println("║            Q - выход из программы             ║");
         System.out.println("╚═══════════════════════════════════════════════╝");
     }
 
@@ -20,7 +21,7 @@ public class ConsoleView implements View{
         System.out.println("║  следующие данные, разделённые пробелом:      ║");
         System.out.println("║  - Фамилия Имя Отчество                       ║");
         System.out.println("║  - Дата рождения (в формате dd.mm.yyyy)       ║");
-        System.out.println("║  - Номер телефона (целое число 11 цифр)       ║");
+        System.out.println("║  - Номер телефона (11 цифр без пробелов)      ║");
         System.out.println("║  - Пол (символ латиницей f или m)             ║");
         System.out.println("╚═══════════════════════════════════════════════╝");
     }
